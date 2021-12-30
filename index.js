@@ -6,9 +6,10 @@ const mongoose = require("mongoose");
 const users = require("./routes/users");
 const auth = require("./routes/auth");
 const notes = require("./routes/notes");
-
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 if (!config.get("jwtPrivateKey")) {
   console.log("Fatal Error: Secret Key not provided");

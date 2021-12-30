@@ -26,8 +26,8 @@ router.post("/", async (req, res) => {
   await user.save();
   //Generating JWT token
   const token = user.generateToken();
-  res.header("x-auth-token", token);
-  res.send(_.pick(user, ["_id", "name", "email"]));
+  // res.header + ("x-auth-token", token);
+  res.send(token);
 });
 
 module.exports = router;
