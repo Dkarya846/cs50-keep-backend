@@ -57,9 +57,10 @@ router.put("/:id", auth, async (req, res) => {
   const user = await User.findById(req.user._id);
   const note = user.notes.find((note) => note._id.toString() === req.params.id);
   if (!note) return res.status(400).send("Note not found");
-
   const isExist = user.notes.find(
-    (note) => note.title.toString() === req.body.title
+    (note) =>
+      note.title.toString() === req.body.title &&
+      note._id.toString() !== req.params.id
   );
 
   if (isExist)
