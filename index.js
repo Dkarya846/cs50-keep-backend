@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-   origin: "https://cs50-keep-backend.herokuapp.com/*",
+   origin: "*",
    credentials: true, //access-control-allow-credentials:true
    optionSuccessStatus: 200,
 };
