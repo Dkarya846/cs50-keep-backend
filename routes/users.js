@@ -32,6 +32,11 @@ router.post("/", async (req, res) => {
       "Access-Control-Allow-Methods",
       "GET, DELETE, HEAD, OPTIONS, POST"
    );
+   
+   res.header(
+    "Access-Control-Allow-Credentials",
+    "GET, DELETE, HEAD, OPTIONS, POST"
+ );
    res.send(token);
 });
 
