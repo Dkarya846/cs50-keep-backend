@@ -26,8 +26,8 @@ router.post("/", async (req, res) => {
    await user.save();
    //Generating JWT token
    const token = user.generateToken();
-   // res.header + ("x-auth-token", token);
-   res.header("Access-Control-Allow-Origin", "true");
+   res.header("x-auth-token", token);
+   res.header("Access-Control-Allow-Origin", "*");
    res.send(token);
 });
 
