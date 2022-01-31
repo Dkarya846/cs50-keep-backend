@@ -7,8 +7,17 @@ const users = require("./routes/users");
 const auth = require("./routes/auth");
 const notes = require("./routes/notes");
 const cors = require("cors");
+
 const app = express();
 app.use(express.json());
+app.use(function (request, response, next) {
+   response.header("Access-Control-Allow-Origin", "*");
+   response.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+   );
+   next();
+});
 app.use(cors());
 
 if (!config.get("jwtPrivateKey")) {
