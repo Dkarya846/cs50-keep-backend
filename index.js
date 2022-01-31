@@ -20,7 +20,7 @@ app.use(express.json());
 // });
 app.use(
    cors({
-      origin: "*", // restrict calls to those this address
+      origin: "http://localhost:3000", // restrict calls to those this address
       methods: "POST", // only allow GET requests
    })
 );
