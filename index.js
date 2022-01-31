@@ -18,7 +18,12 @@ app.use(express.json());
 //    );
 //    next();
 // });
-app.use(cors());
+app.use(
+   cors({
+      origin: "*", // restrict calls to those this address
+      methods: "POST", // only allow GET requests
+   })
+);
 
 // app.use((req, res, next) => {
 //    res.header("Access-Control-Allow-Origin", "*");
