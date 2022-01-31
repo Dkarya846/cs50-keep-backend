@@ -27,7 +27,11 @@ router.post("/", async (req, res) => {
    //Generating JWT token
    const token = user.generateToken();
    res.header("x-auth-token", token);
-   res.header("Access-Control-Allow-Origin", "*");
+   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+   res.header(
+      "Access-Control-Allow-Methods",
+      "GET, DELETE, HEAD, OPTIONS, POST"
+   );
    res.send(token);
 });
 
