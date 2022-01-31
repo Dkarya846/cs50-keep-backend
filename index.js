@@ -11,11 +11,11 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 
-const corsOptions = {
-   origin: "http://localhost:3000",
-   credentials: true, //access-control-allow-credentials:true
-   optionSuccessStatus: 200,
-};
+const corsOptions ={
+   origin:'https://cs50-keep-backend.herokuapp.com', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200
+}
 app.use(cors(corsOptions));
 
 if (!config.get("jwtPrivateKey")) {
